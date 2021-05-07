@@ -10,7 +10,8 @@ import { Post } from 'src/services/post';
 })
 export class LoginPage implements OnInit {
 
-  usuario: string ="";
+  //usuario: string ="";
+  nome: string="";
   senha: string =""; 
   constructor(private router: Router, private provider: Post , private toastCtrl: ToastController) //toastcontroler
   { }
@@ -19,7 +20,7 @@ export class LoginPage implements OnInit {
   }
 
   async login(){
-    if(this.usuario==''){
+    if(this.nome==''){
       const toast = await this.toastCtrl.create({
         message: 'Preencha o nome de Usuário',
         duration: 2000,
@@ -39,7 +40,7 @@ export class LoginPage implements OnInit {
     }
     let dados = {
       requisicao: 'login',
-      usuario : this.usuario, 
+      nome : this.nome, 
       senha: this.senha
     };
   
@@ -64,7 +65,7 @@ export class LoginPage implements OnInit {
           color: 'success'
         });
         toast.present();
-        this.usuario = "";
+        this.nome = "";
         this.senha="";
         // teste de retorno de dados....
         console.log(data);
