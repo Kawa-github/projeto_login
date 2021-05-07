@@ -7,7 +7,7 @@ import 'rxjs-compat/add/operator/map';
 
 @Injectable()
 export class Post{
-    server: string = "http://localhost/apiphp/apiphp/"
+    server: string = "http://localhost/apiphp/api.php/"
     constructor (private http: HttpClient){
     } 
     
